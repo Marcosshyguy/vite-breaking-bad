@@ -1,14 +1,25 @@
 <script>
-import AppGrid from "./components/AppGrid.vue"
+import axios from "axios";
+import AppGrid from "./components/AppGrid.vue";
+import {store} from "./store";
 export default{
   data(){
-
+    return{
+      store
+    }
   },
   props:{
 
   },
   components:{
     AppGrid
+  },
+  created(){
+    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => 
+    {
+        this.store.characters = resp.data;
+        console.log(this.store.characters);
+    });
   }
 }
 </script>

@@ -1,10 +1,10 @@
 <script>
 import AppCard from './AppCard.vue';
-import {store} from "../store";
+
 export default{
   data(){
     return {
-        store
+        
     }
   },
   props:{
@@ -13,6 +13,7 @@ export default{
   components:{
     AppCard
   }
+  
 }
 </script>
 
