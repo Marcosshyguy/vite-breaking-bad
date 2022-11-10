@@ -1,10 +1,11 @@
 <script>
+import {store} from "../store";
 import AppCard from './AppCard.vue';
 
 export default{
   data(){
     return {
-        
+        store
     }
   },
   props:{
@@ -22,11 +23,10 @@ export default{
     <div class="result-bar">
         <span><strong>Found  ...... Character</strong></span>
     </div>
-    <div class="row row-col-4">
-        <div class="col"><AppCard /></div>
-        <div class="col"><AppCard /></div>
-        <div class="col"><AppCard /></div>
-        <div class="col"><AppCard /></div>
+    <div class="row row-col-4 row-col-md-4" >
+        <div class="col" v-for="(person, index) in store.characters" key="index">
+            <AppCard :character="person" />
+        </div>
         
     </div>
 </div>
@@ -46,6 +46,7 @@ export default{
 .col{
     
     padding: 1em;
+    height: 350px;
 }
 
 </style>
