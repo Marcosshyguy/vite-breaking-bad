@@ -10,9 +10,13 @@ export default{
 </script>
 
 <template>
-
+<h1>Breaking Bad Api</h1>
+<div class="container">
+  
+</div>
 </template>
 
 <style lang="scss">
-@use "./styles/general.scss" as *;
+@use "./style/general.scss" as *;
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 </style>
