@@ -1,10 +1,14 @@
 <script>
+import AppCard from './AppCard.vue';
 export default{
   data(){
 
   },
   props:{
 
+  },
+  components:{
+    AppCard
   }
 }
 </script>
@@ -15,26 +19,29 @@ export default{
         <span><strong>Found  ...... Character</strong></span>
     </div>
     <div class="row row-col-4">
+        <div class="col"><AppCard /></div>
+        <div class="col"><AppCard /></div>
+        <div class="col"><AppCard /></div>
+        <div class="col"><AppCard /></div>
         
     </div>
 </div>
 </template>
 
 <style lang="scss" scoped>
-@use "../style/partials/variables.scss";
+@use "../style/partials/variables.scss" as *;
 
 .result-bar{
-    background-color: #212529;
+    background-color: $result-bg;
     color: white;
     padding: .7rem;
 
-        span{
-            display: inline-block;
-            line-height: 100%;
-            vertical-align: middle;
 
-        }
 }
 
+.col{
+    
+    padding: 1em;
+}
 
 </style>
