@@ -19,18 +19,20 @@ export default{
 </script>
 
 <template>
-<div class="container">
+<div class="container_custom">
     <div class="result-bar">
-        <span><strong>Found  ...... Character</strong></span>
+        <span><strong>Found  {{store.characters.length}} Character</strong></span>
     </div>
-    <div class="row row-col-4 row-col-md-4" >
-        <div class="col" v-for="(person, index) in store.characters" key="index">
-            <AppCard :character="person" />
+    <div class="container mt-3">
+        <div class="row g-2" >
+            <div class="col-3 " v-for="(person, index) in store.characters" key="index">
+                <AppCard :character="person" />
+            </div>
         </div>
-        
     </div>
 </div>
 </template>
+
 
 <style lang="scss" scoped>
 @use "../style/partials/variables.scss" as *;
@@ -43,10 +45,11 @@ export default{
 
 }
 
-.col{
-    
-    padding: 1em;
-    height: 350px;
-}
+    .col{
+        
+        padding: 1em;
+        height: 350px;
+    }
+
 
 </style>
