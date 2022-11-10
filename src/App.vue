@@ -1,19 +1,21 @@
 <script>
+import AppGrid from "./components/AppGrid.vue"
 export default{
   data(){
 
   },
   props:{
 
+  },
+  components:{
+    AppGrid
   }
 }
 </script>
 
 <template>
 <h1>Breaking Bad Api</h1>
-<div class="container">
-  
-</div>
+<AppGrid />
 </template>
 
 <style lang="scss">
