@@ -1,6 +1,8 @@
 <script>
 import axios from "axios";
 import AppGrid from "./components/AppGrid.vue";
+// import AppLoad from "./components/AppLoad.vue";
+import AppSearch from "./components/AppSearch.vue";
 import {store} from "./store";
 export default{
   data(){
@@ -11,8 +13,13 @@ export default{
   props:{
 
   },
+  methods :{
+
+  },
   components:{
-    AppGrid
+    AppGrid,
+    AppSearch
+    // AppLoad
   },
   created(){
     axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => 
@@ -26,6 +33,8 @@ export default{
 
 <template>
 <h1>Breaking Bad Api</h1>
+<!-- <AppLoad /> -->
+<AppSearch @search=""/>
 <AppGrid />
 </template>
 
