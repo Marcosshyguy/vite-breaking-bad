@@ -15,14 +15,13 @@ export default{
 
 <template>
 <div class="container_custom">
-    <div class="container"></div>
-        <div class="input-group mb-1">
+        <div class="input-group mb-1 mx-auto">
             <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary" type="button" @click="$emit('search')">Search</button>
+                <button class="btn btn-outline-secondary" type="button" @click="$emit('search') ">Search</button>
             </div>
             <label for="inputGroupSelect03" ></label>
-            <select class="custom-select w-75" id="inputGroupSelect03">
-                <option selected>Select category</option>
+            <select class="custom-select w-75" id="inputGroupSelect03" v-model="store.categorySelected">
+                <option value="" selected>Select category</option>
                 <option v-for="(category,index) in store.categorysList" :value="category" :key="index">{{ category }}</option>
                 
             </select>

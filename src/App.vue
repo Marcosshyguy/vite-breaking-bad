@@ -14,7 +14,22 @@ export default{
 
   },
   methods :{
+    chooseCategory(){ 
+      let question = ""
+      if(this.store.categorySelected !== ""){
+        question = "?category=" + this.store.categorySelected;
+        console.log("dio non esiste")
+      }else{
+        question = "";
+        console.log("dio  esiste")
 
+      }
+
+      axios.get(`https://www.breakingbadapi.com/api/characters${question}`).then((resp) => 
+      {
+          this.store.characters = resp.data;
+      });
+    }
   },
   components:{
     AppGrid,
@@ -22,11 +37,7 @@ export default{
     // AppLoad
   },
   created(){
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => 
-    {
-        this.store.characters = resp.data;
-        console.log(this.store.characters);
-    });
+    this.chooseCategory();
   }
 }
 </script>
@@ -34,7 +45,7 @@ export default{
 <template>
 <h1>Breaking Bad Api</h1>
 <!-- <AppLoad /> -->
-<AppSearch @search=""/>
+<AppSearch @search="chooseCategory" />
 <AppGrid />
 </template>
 
